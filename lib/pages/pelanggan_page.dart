@@ -16,7 +16,6 @@ class _PelangganPageState extends State<PelangganPage> {
   @override
   void initState() {
     super.initState();
-    // Mengambil data pelanggan saat halaman diinisialisasi
     context.read<PelangganCubit>().fetchPelanggan();
   }
 
@@ -37,13 +36,13 @@ class _PelangganPageState extends State<PelangganPage> {
               return ListTile(
                 title: Text(pelanggan.nama),
                 subtitle: Text('${pelanggan.domisili} | Jenis Kelamin: ${pelanggan.jenisKelamin == 'L' ? "Laki-laki" : "Perempuan"}'),
-                onTap: () => _showDetailPage(context, pelanggan), // Tampilkan detail saat di-tap
+                onTap: () => _showDetailPage(context, pelanggan), 
                 trailing: Row(
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     IconButton(
                       icon: const Icon(Icons.edit),
-                      onPressed: () => _showPelangganForm(context, pelanggan), // Edit pelanggan
+                      onPressed: () => _showPelangganForm(context, pelanggan), 
                     ),
                     IconButton(
                       icon: const Icon(Icons.delete),

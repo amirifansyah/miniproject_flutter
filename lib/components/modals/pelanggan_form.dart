@@ -21,7 +21,7 @@ class _PelangganFormState extends State<PelangganForm> {
     super.initState();
     _namaController = TextEditingController(text: widget.pelanggan?.nama ?? '');
     _domisiliController = TextEditingController(text: widget.pelanggan?.domisili ?? '');
-    _jenisKelamin = widget.pelanggan?.jenisKelamin ?? 'L'; // Default for male
+    _jenisKelamin = widget.pelanggan?.jenisKelamin ?? 'L'; 
   }
 
   @override

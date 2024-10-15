@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../bloc/barang_bloc.dart'; // Pastikan untuk membuat barang_bloc.dart
+import '../bloc/barang_bloc.dart'; 
 import '../models/barang.dart';
 import '../components/modals/barang_form.dart';
 import '../pages/detail/barang_detail_page.dart';
@@ -16,7 +16,6 @@ class _BarangPageState extends State<BarangPage> {
   @override
   void initState() {
     super.initState();
-    // Mengambil data barang saat halaman diinisialisasi
     context.read<BarangCubit>().fetchBarang();
   }
 
@@ -37,13 +36,13 @@ class _BarangPageState extends State<BarangPage> {
               return ListTile(
                 title: Text(barang.nama),
                 subtitle: Text('${barang.kategori} | Harga: ${barang.harga}'),
-                onTap: () => _showDetailPage(context, barang), // Tampilkan detail saat di-tap
+                onTap: () => _showDetailPage(context, barang), 
                 trailing: Row(
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     IconButton(
                       icon: const Icon(Icons.edit),
-                      onPressed: () => _showBarangForm(context, barang), // Edit barang
+                      onPressed: () => _showBarangForm(context, barang), 
                     ),
                     IconButton(
                       icon: const Icon(Icons.delete),
@@ -83,7 +82,7 @@ class _BarangPageState extends State<BarangPage> {
   void _showDetailPage(BuildContext context, Barang barang) async {
     await Navigator.of(context).push(
       MaterialPageRoute(
-        builder: (context) => BarangDetailPage(barang: barang), // Buat halaman detail barang
+        builder: (context) => BarangDetailPage(barang: barang), 
       ),
     );
   }

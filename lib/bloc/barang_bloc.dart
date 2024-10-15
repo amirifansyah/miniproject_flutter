@@ -14,16 +14,16 @@ class BarangCubit extends Cubit<List<Barang>> {
 
   Future<void> createBarang(Barang barang) async {
     await apiService.createBarang(barang);
-    fetchBarang(); // Refresh data setelah create
+    fetchBarang(); 
   }
 
   Future<void> updateBarang(Barang barang) async {
     await apiService.updateBarang(barang);
-    fetchBarang(); // Refresh data setelah update
+    fetchBarang(); 
   }
 
   Future<void> deleteBarang(String idBarang) async {
     await apiService.deleteBarang(idBarang);
-    fetchBarang(); // Refresh data setelah delete
+    fetchBarang(); 
   }
 }

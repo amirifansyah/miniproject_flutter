@@ -1,5 +1,5 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../models/pelanggan.dart' as pelanggan_model; // Menggunakan alias
+import '../models/pelanggan.dart' as pelanggan_model; 
 import '../services/api_service.dart';
 
 class PelangganCubit extends Cubit<List<pelanggan_model.Pelanggan>> {
@@ -14,16 +14,16 @@ class PelangganCubit extends Cubit<List<pelanggan_model.Pelanggan>> {
 
   Future<void> createPelanggan(pelanggan_model.Pelanggan pelanggan) async {
     await apiService.createPelanggan(pelanggan);
-    fetchPelanggan(); // Refresh data setelah create
+    fetchPelanggan(); 
   }
 
   Future<void> updatePelanggan(pelanggan_model.Pelanggan pelanggan) async {
     await apiService.updatePelanggan(pelanggan);
-    fetchPelanggan(); // Refresh data setelah update
+    fetchPelanggan(); 
   }
 
   Future<void> deletePelanggan(String idPelanggan) async {
     await apiService.deletePelanggan(idPelanggan);
-    fetchPelanggan(); // Refresh data setelah delete
+    fetchPelanggan(); 
   }
 }

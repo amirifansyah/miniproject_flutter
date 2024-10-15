@@ -1,6 +1,6 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
-import '../models/pelanggan.dart' as pelanggan_model; // Menggunakan alias
+import '../models/pelanggan.dart' as pelanggan_model; 
 import '../models/barang.dart';
 import '../models/transaksi.dart';
 import '../models/item_penjualan.dart';
@@ -157,7 +157,6 @@ class ApiService {
 
   Future<void> deleteTransaksi(String idNota) async {
     final response = await http.delete(Uri.parse('$baseUrl/penjualan/$idNota'));
-    print('Delete response status: ${response.statusCode}'); // Log status code
     if (response.statusCode != 204) {
       throw Exception('Failed to delete transaksi: ${response.body}');
     }

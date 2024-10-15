@@ -12,7 +12,7 @@ class BarangForm extends StatefulWidget {
 
 class _BarangFormState extends State<BarangForm> {
   final _formKey = GlobalKey<FormState>();
-  late String kode; // Field kode untuk disimpan tetapi tidak ditampilkan
+  late String kode; 
   late String nama;
   late String kategori;
   late double harga;
@@ -21,14 +21,13 @@ class _BarangFormState extends State<BarangForm> {
   void initState() {
     super.initState();
     if (widget.barang != null) {
-      // Menggunakan data dari barang yang ada
-      kode = widget.barang!.kode; // Ambil kode dari objek yang ada
+      kode = widget.barang!.kode; 
       nama = widget.barang!.nama;
       kategori = widget.barang!.kategori;
       harga = widget.barang!.harga;
     } else {
-      // Mengatur nilai default untuk barang baru
-      kode = ''; // Atur default untuk kode
+      
+      kode = ''; 
       nama = '';
       kategori = '';
       harga = 0.0;
@@ -44,8 +43,8 @@ class _BarangFormState extends State<BarangForm> {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            // Field kode tidak ditampilkan di UI
-            // Anda bisa menyimpan kode di sini tetapi tidak membuat TextFormField untuk menampilkannya
+            
+            
 
             TextFormField(
               initialValue: nama,
@@ -62,7 +61,7 @@ class _BarangFormState extends State<BarangForm> {
             TextFormField(
               initialValue: harga.toString(),
               decoration: const InputDecoration(labelText: 'Harga'),
-              keyboardType: TextInputType.number, // Mengizinkan input angka
+              keyboardType: TextInputType.number, 
               onSaved: (value) => harga = double.parse(value!),
               validator: (value) => value!.isEmpty ? 'Harga tidak boleh kosong' : null,
             ),
@@ -75,8 +74,8 @@ class _BarangFormState extends State<BarangForm> {
             if (_formKey.currentState!.validate()) {
               _formKey.currentState!.save();
               final newBarang = Barang(
-                id: widget.barang?.id ?? 0, // Gunakan 0 atau id default untuk barang baru
-                kode: kode, // Simpan kode di objek Barang
+                id: widget.barang?.id ?? 0, 
+                kode: kode, 
                 nama: nama,
                 kategori: kategori,
                 harga: harga,

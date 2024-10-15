@@ -13,14 +13,13 @@ class Barang {
     required this.harga,
   });
 
-  // Metode untuk konversi dari JSON dan sebaliknya
   factory Barang.fromJson(Map<String, dynamic> json) {
     return Barang(
-      id: json['id'] as int, // Pastikan id di-cast ke int
-      kode: json['kode'] as String, // Pastikan kode di-cast ke String
-      nama: json['nama'] as String, // Pastikan nama di-cast ke String
-      kategori: json['kategori'] as String, // Pastikan kategori di-cast ke String
-      harga: double.tryParse(json['harga'].toString()) ?? 0.0, // Konversi harga ke double
+      id: json['id'] as int, 
+      kode: json['kode'] as String, 
+      nama: json['nama'] as String, 
+      kategori: json['kategori'] as String, 
+      harga: double.tryParse(json['harga'].toString()) ?? 0.0, 
     );
   }
 

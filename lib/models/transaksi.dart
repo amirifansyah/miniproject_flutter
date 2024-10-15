@@ -2,13 +2,13 @@ import 'item_penjualan.dart';
 import 'pelanggan.dart';
 
 class Transaksi {
-  final int id; // Field baru untuk id
+  final int id; 
   final String idNota;
   final String tanggal;
   final String kodePelanggan;
   final List<ItemPenjualan> items;
-  final Pelanggan? pelanggan; // Opsional, bisa null
-  final double subtotal; // Subtotal
+  final Pelanggan? pelanggan; 
+  final double subtotal; 
 
   Transaksi({
     required this.id,

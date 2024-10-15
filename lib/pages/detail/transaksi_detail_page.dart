@@ -1,4 +1,3 @@
-// pages/detail/transaksi_detail_page.dart
 import 'package:flutter/material.dart';
 import '../../models/transaksi.dart';
 
@@ -40,10 +39,10 @@ class TransaksiDetailPage extends StatelessWidget {
             Text('Items:', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
             SingleChildScrollView(
               child: DataTable(
-                columnSpacing: 0, // Menghapus jarak antara kolom
+                columnSpacing: 0, 
                 columns: [
-                  DataColumn(label: Container(width: 200, child: Text('Kode Barang'))), // Lebar kolom yang lebih besar
-                  DataColumn(label: Container(width: 150, child: Text('Qty'))), // Lebar kolom yang lebih besar
+                  DataColumn(label: Container(width: 200, child: Text('Kode Barang'))), 
+                  DataColumn(label: Container(width: 150, child: Text('Qty'))), 
                 ],
                 rows: transaksi.items.map((item) {
                   return DataRow(

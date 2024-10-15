@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import '../../models/pelanggan.dart';
-import '../../bloc/pelanggan_bloc.dart';
 
 class PelangganDetailPage extends StatelessWidget {
   final Pelanggan pelanggan;

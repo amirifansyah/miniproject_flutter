@@ -18,14 +18,13 @@ class TransaksiCubit extends Cubit<List<Transaksi>> {
 
 Future<void> createTransaksi(Transaksi transaksi) async {
   try {
-    // Panggil createTransaksi dengan parameter yang dibutuhkan
     await apiService.createTransaksi(
       tanggal: transaksi.tanggal,
       kodePelanggan: transaksi.kodePelanggan,
-      itemPenjualans: transaksi.items, // Pastikan ini sesuai dengan tipe
+      itemPenjualans: transaksi.items, 
       subtotal: transaksi.subtotal,
     );
-    await fetchTransaksi(); // Memperbarui daftar setelah transaksi berhasil dibuat
+    await fetchTransaksi(); 
   } catch (e) {
     print('Error creating transaksi: $e');
   }
@@ -42,7 +41,6 @@ Future<void> createTransaksi(Transaksi transaksi) async {
   }
 
   Future<void> deleteTransaksi(String idNota) async {
-    print(idNota);
     try {
       await apiService.deleteTransaksi(idNota);
       fetchTransaksi();

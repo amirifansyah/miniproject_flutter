@@ -117,7 +117,7 @@ class _TransaksiFormState extends State<TransaksiForm> {
         subtotal: subtotal,
       );
 
-      Navigator.of(context).pop(transaksi); // Kembali dengan data transaksi
+      Navigator.of(context).pop(transaksi); 
     }
   }
 
@@ -241,7 +241,7 @@ class _TransaksiFormState extends State<TransaksiForm> {
           child: const Text('Simpan'),
         ),
         TextButton(
-          onPressed: () => Navigator.of(context).pop(), // Tutup dialog
+          onPressed: () => Navigator.of(context).pop(), 
           child: const Text('Tutup'),
         ),
       ],
